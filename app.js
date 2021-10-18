@@ -12,29 +12,29 @@ hbs.registerPartials( __dirname + '/views/partials');
 // Servir contenido estático
 app.use( express.static('public'));
 
-app.get('/', function (req, res) {
-    res.render('home', {
-        nombre: 'Melissa',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/', function (req, res) {
+//     res.render('home', {
+//         nombre: 'Melissa',
+//         titulo: 'Curso de Node'
+//     });
+// });
  
-app.get('/generic', function (req, res) {
-    res.render('generic', {
-        nombre: 'Melissa',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/generic', function (req, res) {
+//     res.render('generic', {
+//         nombre: 'Melissa',
+//         titulo: 'Curso de Node'
+//     });
+// });
 
-app.get('/elements', function (req, res) {
-    res.render('elements', {
-        nombre: 'Melissa',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/elements', function (req, res) {
+//     res.render('elements', {
+//         nombre: 'Melissa',
+//         titulo: 'Curso de Node'
+//     });
+// });
 
 app.get('*', function (req, res) {
-    res.send('404 | Page not found!')
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
